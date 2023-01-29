@@ -21,6 +21,10 @@ export async function install(_version?: string) {
   await api.$`apt install -y curl`;
 
   await api.$`curl -o- https://raw.githubusercontent.com/zcorky/zmicro/master/install | bash`;
+
+  await api.$`zmicro info`;
+
+  await api.$`zmicro -v`;
 }
 
 export async function action() {
