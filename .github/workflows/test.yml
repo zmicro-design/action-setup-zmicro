@@ -16,4 +16,4 @@ jobs:
           - macOS-latest
     steps:
       - name: Setup Zmicro
-        uses: zmicro-design/action-setup-zmicro@v1.0.8
+        uses: zmicro-design/action-setup-zmicro@v1.0.10
