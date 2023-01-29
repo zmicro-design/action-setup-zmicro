@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
-import { api } from '@cliz/cli';
+import { $ } from '@znode/execa';
 
-api.$.verbose = true;
+$.verbose = true;
 
 export interface IActionInput {
   version?: string;
@@ -16,15 +16,15 @@ export function getActionInput(): IActionInput {
 }
 
 export async function install(_version?: string) {
-  await api.$`apt update -y`;
+  await $`apt update -y`;
 
-  await api.$`apt install -y curl`;
+  await $`apt install -y curl`;
 
-  await api.$`curl -o- https://raw.githubusercontent.com/zcorky/zmicro/master/install | bash`;
+  await $`curl -o- https://raw.githubusercontent.com/zcorky/zmicro/master/install | bash`;
 
-  await api.$`zmicro info`;
+  await $`zmicro info`;
 
-  await api.$`zmicro -v`;
+  await $`zmicro -v`;
 }
 
 export async function action() {
