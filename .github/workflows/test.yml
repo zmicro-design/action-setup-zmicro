@@ -15,11 +15,5 @@ jobs:
           - ubuntu-latest
           - macOS-latest
     steps:
-      - name: Get version
-        id: meta
-        run: |
-          version=$(echo ${GITHUB_REF} | sed -e "s%refs/tags/%%g")
-          echo "version=${version}" >> $GITHUB_OUTPUT
-
       - name: Setup Zmicro
-        uses: zmicro-design/action-setup-zmicro@${{ steps.meta.outputs.version }}
+        uses: zmicro-design/action-setup-zmicro@v1.0.5
