@@ -1,7 +1,7 @@
 # GitHub Action to setup Zmicro
 
 ![https://github.com/zmicro-design/action-setup-zmicro](https://img.shields.io/github/v/release/zmicro-design/action-setup-zmicro)
-![https://github.com/zmicro-design/action-setup-zmicro](https://github.com/zmicro-design/action-setup-zmicro/workflows/test/badge.svg)
+![https://github.com/zmicro-design/action-setup-zmicro](https://github.com/zmicro-design/action-setup-zmicro/workflows/Publish/badge.svg)
 
 ### Usage
 
