@@ -15,4 +15,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup Zmicro
-        uses: zmicro-design/action-setup-zmicro@v1.0.1
+        uses: zmicro-design/action-setup-zmicro@v1.0.2
