@@ -17493,8 +17493,8 @@ function getActionInput() {
 }
 exports.getActionInput = getActionInput;
 async function install(_version) {
-    await execa_1.$ `apt update -y`;
-    await execa_1.$ `apt install -y curl`;
+    await execa_1.$ `sudo apt update -y`;
+    await execa_1.$ `sudo apt install -y curl`;
     await execa_1.$ `curl -o- https://raw.githubusercontent.com/zcorky/zmicro/master/install | bash`;
     await execa_1.$ `zmicro info`;
     await execa_1.$ `zmicro -v`;

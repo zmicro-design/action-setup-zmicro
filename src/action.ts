@@ -16,9 +16,9 @@ export function getActionInput(): IActionInput {
 }
 
 export async function install(_version?: string) {
-  await $`apt update -y`;
+  await $`sudo apt update -y`;
 
-  await $`apt install -y curl`;
+  await $`sudo apt install -y curl`;
 
   await $`curl -o- https://raw.githubusercontent.com/zcorky/zmicro/master/install | bash`;
 
