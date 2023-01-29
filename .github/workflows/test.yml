@@ -7,12 +7,19 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
-        node-version: [14.x]
+        os:
+          - ubuntu-latest
+          - macOS-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Get version
+        id: meta
+        run: |
+          version=$(echo ${GITHUB_REF} | sed -e "s%refs/tags/%%g")
+          echo "version=${version}" >> $GITHUB_OUTPUT
 
       - name: Setup Zmicro
-        uses: zmicro-design/action-setup-zmicro@v1.0.3
+        uses: zmicro-design/action-setup-zmicro@${{ steps.meta.outputs.version }}
