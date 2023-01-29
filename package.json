@@ -1,6 +1,6 @@
 {
   "name": "@zcorky/action-setup-zmicro",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "github action for setuping zmicro",
   "keywords": [
     "action",
