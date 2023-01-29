@@ -24,6 +24,9 @@ jobs:
       - name: Install and Build
         run: yarn && yarn build
 
+      - name: Test Setup
+        uses: ./
+
       # Compile dist/index.js and bundle with action.yml
       # Force push major and minor tags, e.g. v1, v1.0
       # See documentation: https://github.com/JasonEtco/build-and-tag-action
