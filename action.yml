@@ -1,0 +1,16 @@
+name: 'Setup Zmicro'
+description: 'github action for setuping zmicro'
+author: 'Zero <GitHub: whatwewant>'
+branding:
+  icon: 'message-square'
+  color: 'green'
+inputs:
+  version:
+    required: false
+    description: specify zmicro version
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: node16
+  main: lib/action.js
