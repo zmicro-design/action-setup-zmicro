@@ -15,6 +15,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
 
+      - name: Get Release Info
+        id: releaser
+        run: version=$(echo ${GITHUB_REF} | sed -e "s%refs/tags/%%g")
+          echo "version=${version}" >> $GITHUB_OUTPUT
+
       - name: Install and Build
         run: yarn && yarn build
 
@@ -22,5 +27,7 @@ jobs:
       # Force push major and minor tags, e.g. v1, v1.0
       # See documentation: https://github.com/JasonEtco/build-and-tag-action
       - uses: JasonEtco/build-and-tag-action@v2
+        with:
+          tag_name: ${{ steps.releaser.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
