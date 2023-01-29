@@ -20,7 +20,7 @@ export async function install(_version?: string) {
   switch (platform) {
     case 'Darwin':
       await $`brew update`;
-      await $`brew install -y curl`;
+      await $`brew install curl`;
       break;
     case 'Linux':
       await $`sudo apt update -y`;
