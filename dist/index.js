@@ -17511,7 +17511,7 @@ async function install(_version) {
             throw new Error(`unsupport platform: ${platform}`);
     }
     core.startGroup(`Install zmicro ...`);
-    await execa_1.$ `curl -o- https://raw.githubusercontent.com/zcorky/zmicro/master/install | bash`;
+    await execa_1.$ `curl --retry 5 --retry-delay 3 -o- https://raw.githubusercontent.com/zcorky/zmicro/master/install | bash`;
     core.endGroup();
     core.startGroup(`Show zmicro info and version ...`);
     await execa_1.$ `zmicro info`;
