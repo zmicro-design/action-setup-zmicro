@@ -35,7 +35,7 @@ export async function install(_version?: string) {
   }
 
   core.startGroup(`Install zmicro ...`);
-  await $`curl -o- https://raw.githubusercontent.com/zcorky/zmicro/master/install | bash`;
+  await $`curl --retry 5 --retry-delay 3 -o- https://raw.githubusercontent.com/zcorky/zmicro/master/install | bash`;
   core.endGroup();
 
   core.startGroup(`Show zmicro info and version ...`);
