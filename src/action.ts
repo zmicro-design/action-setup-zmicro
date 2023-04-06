@@ -42,6 +42,12 @@ export async function install(_version?: string) {
   await $`zmicro info`;
   await $`zmicro -v`;
   core.endGroup();
+
+  // @TODO $ZMICRO_HOME/bin
+  core.startGroup(`Add zmicro bin to PATH ...`);
+  core.addPath('/usr/local/lib/zmicro/bin');
+  // await $`echo "$ZMICRO_HOME/bin" >> $GITHUB_PATH`;
+  core.endGroup();
 }
 
 export async function action() {
